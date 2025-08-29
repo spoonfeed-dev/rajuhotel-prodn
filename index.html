@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Raju Hotel Menu</title>
+    <link rel="stylesheet" href="menu-style.css">
+    <script type="module" src="menu-script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+        <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "t2jnxzkqvq");
+</script>
+</head>
+
+<body>
+    <div class="menu-container">
+        <!-- Sticky Header -->
+        <div class="sticky-header">
+            <div class="restaurant-info">
+                <h1>Raju Hotel</h1>
+                <p><b>Since 1993</b></p>
+            </div>
+            <img src="scan to order (1).png" alt="">
+        </div>
+        <div class="scroll-progress"></div>
+
+        <!-- Menu Banner -->
+        <div class="menu-banner">
+            <img src="scan to order (1).png" alt="raju hotel logo">
+            <h1 class="tracking-in-contract-bck-bottom">The Raju Hotel</h1>
+            <p>Since 1993, crafting memorable experiences with comfort, class, and genuine care.</p>
+        </div>
+
+        <!-- Filter Container -->
+
+
+        <!-- Search Container -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="menu-search" placeholder="Search for dishes...">
+            <div class="search-suggestions" id="search-suggestions"></div>
+        </div>
+
+        <!-- Filter Container -->
+        <div class="filter-container">
+            <div class="filter-scroll" id="filter-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="veg">Veg</button>
+                <button class="filter-btn" data-filter="non-veg">Non-Veg</button>
+                <button class="filter-btn" data-filter="spicy">Spicy</button>
+                <button class="filter-btn" data-filter="mildSpicy">Mild Spicy</button>
+                <button class="filter-btn" data-filter="sweet">Sweet</button>
+                <button class="filter-btn" data-filter="refreshing">Refreshing</button>
+                <button class="filter-btn" data-filter="cold">Cold</button>
+                <button class="filter-btn" data-filter="hot">Hot</button>
+            </div>
+        </div>
+
+
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <div class="category-scroll" id="category-scroll"></div>
+        </div>
+
+        <!-- Recommendations Section -->
+        <div class="recommendations-section">
+            <h2>Recommended</h2>
+            <div class="recommended-items" id="recommended-items"></div>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="menu-content" id="menu-content"></div>
+
+        <!-- Loading State -->
+        <div class="loading-state" id="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading menu...</p>
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="no-results" style="display: none;">
+            No items found
+        </div>
+
+        <!-- Item Modal -->
+        <div class="item-modal" id="item-modal">
+            <div class="item-modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="modal-image" src="" alt="Item Image" class="modal-image lazy-load">
+                <div class="modal-header">
+                    <h2 id="modal-name"></h2>
+                </div>
+                <div class="item-badges" id="modal-badges"></div>
+                <p id="modal-description"></p>
+                <div class="serves-pill">
+                    <i class="fas fa-users"></i> Serves <span id="modal-serves">1</span>
+                </div>
+                <div class="price-options">
+                    <div class="price-option">
+                        <label>Half</label>
+                        <span id="modal-price-half">N/A</span>
+                    </div>
+                    <div class="price-option">
+                        <label>Full</label>
+                        <span id="modal-price-full">N/A</span>
+                    </div>
+                </div>
+                <div class="nutritional-info">
+                    <h3>Important Info</h3>
+                    <p id="modal-nutritional">Images shown are for illustration only; actual dish may vary.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!-- <a href="feedback.html" id="feedback"> -->
+            <div class="feedback">
+                <div class="feedback-content">
+                    <h4>Thank you for choosing us</h4>
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Your satisfaction is our priority.</p>
+                </div>
+                <img src="undraw_chef_yoa7.svg" alt="">
+            </div>
+        <!-- </a> -->
+        <div class="fssai">
+            <img src="fssai-logo.png" alt="fssai logo">
+            <p>Lic No. 10518011000196</p>
+        </div>
+        <div class="f-container">
+            <h5>- made by -</h5>
+            <div class="spoonfeed">
+                <img src="scan to order (3).png" alt="Logo">
+                <h3>SPOONFEED</h3>
+                <div class="spoonfeed-site">
+                    <p>www.spoonfeed.shop</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

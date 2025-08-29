@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>We Value Your Feedback</h1>
+            </div>
+            <p class="subtitle">Help us improve your dining experience</p>
+        </div>
+
+        <form id="feedbackForm" class="feedback-form">
+            <!-- QR Menu Experience Section -->
+            <div class="question-section">
+                <div class="question-header">
+                    <i class="fas fa-qrcode"></i>
+                    <h2>Digital QR Menu Experience</h2>
+                </div>
+                <p class="question-subtitle">How was your experience with our digital QR code menu?</p>
+                
+                <div class="sub-questions">
+                    <div class="sub-question">
+                        <label>Ease of use</label>
+                        <div class="star-rating" data-rating="menu_ease">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <label>Menu clarity & design</label>
+                        <div class="star-rating" data-rating="menu_clarity">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <label>Loading speed</label>
+                        <div class="star-rating" data-rating="menu_speed">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Experience Section -->
+            <div class="question-section">
+                <div class="question-header">
+                    <i class="fas fa-restaurant"></i>
+                    <h2>Restaurant Experience</h2>
+                </div>
+                <p class="question-subtitle">Please rate your overall experience with us</p>
+                
+                <div class="sub-questions">
+                    <div class="sub-question">
+                        <label>Food quality</label>
+                        <div class="star-rating" data-rating="food_quality">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <label>Ambience</label>
+                        <div class="star-rating" data-rating="ambience">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <label>Pricing</label>
+                        <div class="star-rating" data-rating="pricing">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <label>Service quality</label>
+                        <div class="star-rating" data-rating="service">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Details Section -->
+            <div class="question-section">
+                <div class="question-header">
+                    <i class="fas fa-user"></i>
+                    <h2>Your Details (Optional)</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label for="customerName">Name</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Enter your name">
+                </div>
+                
+                <div class="input-group">
+                    <label for="customerPhone">Mobile Number</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="Enter your mobile number">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Submit Feedback
+            </button>
+        </form>
+
+        <div id="thankYouMessage" class="thank-you hidden">
+            <i class="fas fa-check-circle"></i>
+            <h2>Thank You!</h2>
+            <p>Your feedback has been submitted successfully.</p>
+        </div>
+    </div>
+
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Submitting your feedback...</p>
+    </div>
+
+<!-- Replace the old script tags with these -->
+<script type="module" src="feedback.js"></script>
+</body>
+</html>
